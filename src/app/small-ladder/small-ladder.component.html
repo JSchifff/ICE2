@@ -1,0 +1,7 @@
+<div id="smallLadder">
+  <span id="smallLadderHeader">Current Standings</span>
+  <div *ngFor="let stand of standings" class="smallLadderStanding" routerLink="/ViewTeam/{{stand.teamId}}">
+      {{stand.rank}}. {{stand.team}}
+      <span class="smallLadderPoints">{{stand.points}}</span>
+  </div>
+</div>

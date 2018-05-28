@@ -1,0 +1,53 @@
+#smallLadder
+{
+  background-color: white;
+  padding-top: 5px;
+  margin-bottom: 10px;
+
+  border: 1px solid green;
+}
+
+#smallLadderHeader
+{
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  font-weight: bold;
+}
+
+
+/* Ladder standing styling
+(Each row in the small ladder) */
+.smallLadderStanding
+{
+  padding-bottom: 8px;
+  /* margin-right: 20px; */
+  padding-left: 20px;
+  border-top: 1px solid green;
+
+  cursor: pointer;
+}
+
+.smallLadderStanding:nth-child(odd)
+{
+  background-color: rgb(114, 115, 115, 0.2);
+}
+
+/* Change colour of div on hover */
+.smallLadderStanding:hover
+{
+  background-color: rgb(45, 121, 51, 0.3);
+}
+
+.smallLadderStanding:hover:nth-child(odd)
+{
+  background-color: rgb(45, 121, 51, 0.3);
+}
+
+
+.smallLadderPoints
+{
+  float: right;
+  padding-right: 20px;
+}

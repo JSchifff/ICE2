@@ -1,0 +1,61 @@
+#MainLadder
+{
+  width: 80%;
+  margin: auto;
+  background-color: white;
+}
+
+.ladderStanding h2
+{
+  display: inline;
+  float: left;
+
+  margin-right: 10px;
+  font-size: 1.4em;
+}
+
+.ladderStanding img
+{
+  height: 50px;
+}
+
+.standDetail {
+  display: inline-block;
+  margin: auto;
+  width: 80%;
+  text-align: left;
+}
+
+.ladderStanding
+{
+  cursor: pointer;
+  text-align: center;
+
+  overflow: auto;
+
+  border: 1px solid black;
+
+  margin: auto;
+  margin-bottom: 15px;
+
+  padding: 5px;
+
+  font-size: 2em;
+
+  width: 80%;
+}
+
+.ladderStanding:hover
+{
+  background-color: rgb(45, 121, 51, 0.3);
+}
+
+.teamName {
+  font-weight: 600;
+  /* font-family: 'Open Sans', sans-serif; */
+}
+
+
+h1 {
+  text-align: center;
+}

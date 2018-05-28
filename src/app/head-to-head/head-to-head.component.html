@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-10" id="head2headMain">
+      <h1>Head 2 Head</h1>
+
+      Team 1:
+      <select [(ngModel)]="selectedTeam1" (change)="onTeamUpdate()">
+        <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+      </select>
+
+      <br />
+      Team 2:
+      <select [(ngModel)]="selectedTeam2" (change)="onTeamUpdate()">
+        <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+      </select>
+
+      <div *ngIf="data">
+        <hr />
+        {{data.head2head.homeTeamWins}} : {{data.head2head.awayTeamWins}}
+      </div>
+
+    </div>
+
+    <div class="col-sm-1"></div>
+  </div>
+</div>

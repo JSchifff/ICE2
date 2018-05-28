@@ -1,0 +1,12 @@
+<div id="MainLadder">
+
+
+<h1>Complete League Ladder</h1>
+<div *ngFor="let stand of standings" class="ladderStanding" routerLink="/ViewTeam/{{stand.teamId}}">
+  <h2>{{stand.rank}}:</h2>
+  <span class="standDetail">
+    <img src="{{stand.crestURI}}" />
+    <span class="teamName">{{stand.team}}</span>   -   {{stand.points}} Points
+  </span>
+</div>
+</div>

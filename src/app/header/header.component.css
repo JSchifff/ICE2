@@ -1,0 +1,47 @@
+#navLogo {
+  max-height: 50px;
+  animation: spin 4s infinite alternate ease-in-out, roll 4s infinite alternate ease-in-out;
+}
+
+#leftmost {
+  border-left: 1px solid gray;
+  border-top-left-radius: 5px;
+
+}
+
+
+.nav-link {
+  border-top: 1px solid gray;
+  border-right: 1px solid gray;
+  border-top-right-radius: 5px;
+  margin: -2px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: rgb(45, 121, 51, 0.3);
+
+}
+
+#navbar {
+  margin-bottom: 25px;
+  color: white;
+}
+
+.navbar-nav li .nav-link
+{
+  color: white;
+}
+
+
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(720deg);}
+}
+@keyframes roll {
+  to {margin-left: 1000px;}
+}

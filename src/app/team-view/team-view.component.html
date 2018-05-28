@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+
+  <div class="col-sm-1"></div>
+  <app-sidebar class="col-sm-2"></app-sidebar>
+
+    <div id="teamMain" class="col-sm-8">
+          <img src="{{selectedTeam.crestUrl}}" id="mainCrest"/>
+          <h2>{{selectedTeam.name}}</h2>
+          <div>
+            <app-mini-nav></app-mini-nav>
+            <div>
+            <router-outlet></router-outlet>
+           
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</div>
