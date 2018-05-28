@@ -11,7 +11,7 @@ import { Fixture } from './classes/fixture';
 @Injectable()
 export class DataService {
 
-  //private teamsURL = 'http://api.football-data.org/v1/competitions/445/teams';
+  //private teamsURL = 'https://api.football-data.org/v1/competitions/445/teams';
   private compID = '445';
   // private header = new HttpHeaders()
   // .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
@@ -22,7 +22,7 @@ export class DataService {
   getTeams(): Observable<any[]> {
     return this.http.get
     (
-      'http://api.football-data.org/v1/competitions/'+ this.compID +'/teams',
+      'https://api.football-data.org/v1/competitions/'+ this.compID +'/teams',
       {
         headers: new HttpHeaders()
         .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
@@ -36,7 +36,7 @@ export class DataService {
   getStandings(): Observable<any[]> {
     return this.http.get
     (
-      'http://api.football-data.org/v1/competitions/' + this.compID + '/leagueTable',
+      'https://api.football-data.org/v1/competitions/' + this.compID + '/leagueTable',
       {
         headers: new HttpHeaders()
         .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
@@ -49,7 +49,7 @@ export class DataService {
   getSeasonGames(): Observable<any[]> {
     return this.http.get
     (
-      'http://api.football-data.org/v1/competitions/' + this.compID + '/fixtures?timeFrame=p365',
+      'https://api.football-data.org/v1/competitions/' + this.compID + '/fixtures?timeFrame=p365',
       {
         headers: new HttpHeaders()
         .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
@@ -62,7 +62,7 @@ export class DataService {
 
   getTeam(id: string): Observable<any> {
     return this.http.get(
-      'http://api.football-data.org/v1/teams/' + id,
+      'https://api.football-data.org/v1/teams/' + id,
       {
         headers: new HttpHeaders()
         .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
@@ -73,7 +73,7 @@ export class DataService {
 
   getHead2Head(id: number): Observable<any> {
     return this.http.get(
-      'http://api.football-data.org/v1/fixtures/' + id,
+      'https://api.football-data.org/v1/fixtures/' + id,
       {
         headers: new HttpHeaders()
         .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
