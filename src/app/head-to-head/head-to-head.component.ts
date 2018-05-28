@@ -36,6 +36,7 @@ export class HeadToHeadComponent implements OnInit {
           .subscribe(temp => temp.forEach(a =>
             {
               let b = <Fixture>a;
+              console.log(b);
               if((b.homeTeamId == this.selectedTeam1.id && b.awayTeamId == this.selectedTeam2.id)
                   ||
                   (b.homeTeamId == this.selectedTeam2.id && b.awayTeamId == this.selectedTeam2.id))
