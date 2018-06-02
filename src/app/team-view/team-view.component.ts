@@ -21,6 +21,7 @@ export class TeamViewComponent implements OnInit {
 
   standing: Standing;
   selectedTeam: Team;
+  id: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,24 +29,29 @@ export class TeamViewComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
     this.route.params.subscribe(params => {
-      this.getTeam(); // reset and set based on new parameter this time
-    });
+    this.getTeam(); // reset and set based on new parameter this time
     this.getStandings();
+    });
+
 
   }
 
   getTeam(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+
     //console.log(id);
-    this.dataService.getTeam(id).subscribe(temp => this.selectedTeam = temp);
+    this.dataService.getTeam(this.id).subscribe(temp => {
+      this.selectedTeam = temp;
+
+    });
   }
 
   getStandings(): void {
-    this.dataService.getStandings().subscribe(temp => temp.forEach(a => 
+    this.dataService.getStandings().subscribe(temp => temp.forEach(a =>
     {
       let b = <Standing>a;
-      if(b.teamId==this.selectedTeam.id)
+      if(b.teamId == Number(this.id))
       {
         this.standing = b;
       }

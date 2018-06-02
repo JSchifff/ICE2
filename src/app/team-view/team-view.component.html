@@ -1,17 +1,17 @@
-<div class="container-fluid" *ngIf="selectedTeam">
+<div class="container-fluid" >
   <div class="row">
 
   <div class="col-sm-1"></div>
   <app-sidebar class="col-sm-2"></app-sidebar>
 
-    <div id="teamMain" class="col-sm-8">
-          <img src="{{selectedTeam.crestUrl}}" id="mainCrest"/>
+    <div id="teamMain" class="col-sm-8" *ngIf="standing">
+          <img src="{{standing.crestURI}}" id="mainCrest"/>
           <div id ="teamInfo">
             <div id="teamRank">
               <h2>{{standing.rank}}</h2>
             </div>
             <div id="teamName">
-              <h2>{{selectedTeam.name}}</h2>
+              <h2 *ngIf="selectedTeam">{{selectedTeam.name}}</h2>
             </div>
           </div>
           <div>

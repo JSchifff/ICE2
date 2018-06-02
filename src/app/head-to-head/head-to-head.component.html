@@ -51,6 +51,7 @@
 
       <div class="teamData" id="team1Data">
         <div class="rank" *ngIf="team1Standing">
+          <img src="{{team1Standing.crestURI}}" />
           <h4>TEAM RANK:</h4>
           <h1>{{team1Standing.rank}}</h1>
         </div>
@@ -64,6 +65,8 @@
       <!-- TEAM 2 -->
       <div class="teamData" id="team2Data">
         <div class="rank" *ngIf="team2Standing">
+          <img src="{{team2Standing.crestURI}}" />
+
           <h4>TEAM RANK:</h4>
           <h1>{{team2Standing.rank}}</h1>
         </div>
