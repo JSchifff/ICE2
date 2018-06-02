@@ -73,12 +73,14 @@ export class TeamViewComponent implements OnInit {
   {
     var cookieID = document.cookie.split("=")[1];
 
+    console.log(cookieID);
     if(cookieID == this.id)
     {
       this.fav = true;
     }
     else
     {
+      console.log(cookieID + "    |   " + this.id)
       this.fav = false;
     }
   }
