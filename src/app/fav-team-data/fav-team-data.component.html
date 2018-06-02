@@ -1,13 +1,22 @@
 <div id="FavTeamData" *ngIf="id">
   <div class="draw" *ngIf="goalDiff == 0">
-    DRAW
+    <h4>{{favName}}</h4>
+    DREW WITH
+    <h4>{{otherName}}</h4>
+    <span class="scores">{{favGoals}} : {{otherGoals}}</span>
   </div>
 
   <div class="favWin" *ngIf="(goalDiff > 0 && isHome) || (goalDiff < 0 && !isHome)">
-    WIN
+    <h4>{{favName}}</h4>
+    BEAT
+    <h4>{{otherName}}</h4>
+    <span class="scores">{{favGoals}} : {{otherGoals}}</span>
   </div>
 
   <div class="favLose" *ngIf="(goalDiff < 0 && isHome) || (goalDiff > 0 && !isHome)">
-    LOSE
+    <h4>{{favName}}</h4>
+    LOST TO
+    <h4>{{otherName}}</h4>
+    <span class="scores">{{favGoals}} : {{otherGoals}}</span>
   </div>
 </div>
