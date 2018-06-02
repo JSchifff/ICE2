@@ -1,9 +1,18 @@
 <div id="leagueInfo" *ngIf="competition">
+  <div class="div1">
   <h5>English Premier League</h5>
-id: {{competition.id}}<br>
-caption: {{competition.caption}}<br>
-league: {{competition.league}}<br>
-year: {{competition.year}}<br>
-no of teams: {{competition.numberOfTeams}}<br>
-number of games: {{competition.numberOfGames}}<br>
+</div>
+<div class="div1">
+  	Competition:<br>
+  	<b>{{competition.caption}}</b><br>
+  </div>
+  	<div class="div1">
+  	Total Teams:<br>
+  	<b>{{competition.numberOfTeams}}</b>
+  </div>
+  	<div class="div1">
+  	<br>Total Games:<br>
+<b>{{competition.numberOfGames}}</b><br>
+</div>
+
 </div>
