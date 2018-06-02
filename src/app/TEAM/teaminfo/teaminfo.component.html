@@ -1,11 +1,28 @@
-<p>
-WINS: {{teamWins}}<br>
-Losses: {{teamLosses}}<br>
-Draws: {{teamDraws}}<br>
-avaerage goals {{averageGoalsFor}}<br>
-average goals against {{averageGoalsAgainst}}<br>
-total goals for {{totalGoalsFor}}<br>
-total goals against {{totalGoalsAgainst}}<br>
-win percent {{winPercent}}<br>
-total games {{totalGamesPlayed}}<br>
-</p>
+
+<div class="infoG">
+	<h5>Wins</h5> <h1>{{teamWins}}</h1>
+</div>
+<div class="infoY">
+	<h5>Draws</h5> <h1>{{teamDraws}}</h1>
+</div>
+<div class="infoR">
+	<h5>Losses</h5> <h1>{{teamLosses}}</h1>
+</div>
+<div class="infoG">
+	<h5>Average Goals Scored</h5><h1>{{averageGoalsFor| number: '1.0-2'}}</h1>
+</div>
+<div class="infoG">
+	<h5>Win Percentage</h5><h1>{{winPercent*100| number: '1.0-2'}}%</h1>
+</div>
+<div class="infoR">
+	<h5>Average Goals Scored Against</h5><h1>{{averageGoalsAgainst| number: '1.0-2'}}</h1>
+</div>
+<div class="infoG">
+	<h5>Total Goals Scored</h5><h1>{{totalGoalsFor}}</h1>
+</div>
+<div class="infoY">
+	<h5>Total Games Played</h5><h1>{{totalGamesPlayed}}</h1>
+</div>
+<div class="infoR">
+	<h5>Total Goals Scored Against</h5><h1>{{totalGoalsAgainst}}</h1>
+</div>

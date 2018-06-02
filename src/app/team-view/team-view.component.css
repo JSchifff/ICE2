@@ -9,16 +9,18 @@
   	padding-bottom: 36px;
 	text-align: center;
 	float:left;
-	/background-color: lightblue; 
+	background: linear-gradient(to left,lightblue, blue); 
 	width: 20%;
 	border-radius: 25px;
 	border: solid green 2px;
+
 }
 #teamRank h2{
 	font-size: 6em;
 }
 #teamName
 {
+	background: linear-gradient(to right,lightblue, blue);
 	border-radius: 25px;
 	border: solid green 2px;
 	padding-top: 75px;
@@ -27,7 +29,6 @@
 	width: 60%;
 	float: left;
 	text-align: center;
-	background-color: pink;
 	font-style: "Times";
 }
 #teamInfo

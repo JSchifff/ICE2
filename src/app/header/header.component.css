@@ -1,5 +1,5 @@
 #navLogo {
-  max-height: 50px;
+  max-height: 100px;
   animation: spin 4s infinite alternate ease-in-out;
   position: relative;
 }

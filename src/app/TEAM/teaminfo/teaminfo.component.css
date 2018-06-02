@@ -1,0 +1,30 @@
+
+.infoG{
+	background: linear-gradient( to bottom, rgba(27, 179, 0, 0.75), rgba(147, 255, 128, 0.75));
+	width: 33.33%;
+	border: green solid 2px;
+	height: 120px;
+	border-radius: 10px;
+	float: left;
+	text-align: center;
+
+}
+.infoR{
+	background: linear-gradient( to bottom, rgba(230, 0, 0, 0.75),rgba(255, 153, 153, 0.75));
+	width: 33.33%;
+	border: green solid 2px;
+	height: 120px;
+	border-radius: 10px;
+	float: left;
+	text-align: center;
+
+}
+.infoY{
+	background: linear-gradient( to bottom, rgba(204, 204, 0, 0.75), rgba(255, 255, 128, 0.5));
+	width: 33.33%;
+	border: green solid 2px;
+	height: 120px;
+	border-radius: 10px;
+	float: left;
+	text-align: center;
+}
