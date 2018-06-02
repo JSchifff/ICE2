@@ -11,12 +11,16 @@
               <h2>{{standing.rank}}</h2>
             </div>
             <div id="teamName">
-              <h2 *ngIf="selectedTeam">{{selectedTeam.name}}</h2>
+              <h2 *ngIf="selectedTeam">
+                {{selectedTeam.name}}
+                <span class="glyphicon glyphicon-heart-empty" id="emptyHeart" *ngIf="!fav"  (click)="setFav()"></span>
+                <span class="glyphicon glyphicon-heart" id="fullHeart" *ngIf="fav"></span>
+              </h2>
             </div>
           </div>
           <div>
             <app-mini-nav></app-mini-nav>
-            <router-outlet *ngIf="standing"></router-outlet>
+            <router-outlet *ngIf="selectedTeam"></router-outlet>
           </div>
     </div>
     <div class="col-sm-1"></div>
