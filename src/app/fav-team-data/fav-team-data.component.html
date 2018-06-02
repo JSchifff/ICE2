@@ -6,14 +6,14 @@
     <span class="scores">{{favGoals}} : {{otherGoals}}</span>
   </div>
 
-  <div class="favWin" *ngIf="(goalDiff > 0 && isHome) || (goalDiff < 0 && !isHome)">
+  <div class="win" *ngIf="(goalDiff > 0 && isHome) || (goalDiff < 0 && !isHome)">
     <h4>{{favName}}</h4>
     BEAT
     <h4>{{otherName}}</h4>
     <span class="scores">{{favGoals}} : {{otherGoals}}</span>
   </div>
 
-  <div class="favLose" *ngIf="(goalDiff < 0 && isHome) || (goalDiff > 0 && !isHome)">
+  <div class="lose" *ngIf="(goalDiff < 0 && isHome) || (goalDiff > 0 && !isHome)">
     <h4>{{favName}}</h4>
     LOST TO
     <h4>{{otherName}}</h4>

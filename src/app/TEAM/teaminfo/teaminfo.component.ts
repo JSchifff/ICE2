@@ -51,10 +51,6 @@ export class TeaminfoComponent implements OnInit {
     this.games = new Array();
     this.getRecentGames();
     this.getTeamValues();
-
-    this.averageGoalsFor=this.totalGoalsFor/this.totalGamesPlayed;
-    this.averageGoalsAgainst=this.totalGoalsAgainst/this.totalGamesPlayed;
-    console.log(this.averageGoalsFor);
   }
 
   getRecentGames(): void
@@ -70,7 +66,8 @@ export class TeaminfoComponent implements OnInit {
 
   getTeamValues(): void
   {
-    this.dataService.getSeasonGames().subscribe(temp => temp.forEach(a=>
+    this.dataService.getSeasonGames().subscribe(temp => {
+    temp.forEach(a=>
     {
       let b = <Fixture>a;
       if(b.homeTeamName==this.tTeam.name)
@@ -109,7 +106,14 @@ export class TeaminfoComponent implements OnInit {
         this.totalGoalsAgainst +=b.result.goalsHomeTeam;
         this.totalGamesPlayed++;
       }
-    }))
+    }
+
+    );
+    this.averageGoalsFor=this.totalGoalsFor / this.totalGamesPlayed;
+    this.averageGoalsAgainst=this.totalGoalsAgainst / this.totalGamesPlayed;
+    this.winPercent = this.teamWins / this.totalGamesPlayed;
+    }
+    )
   }
 
 }
