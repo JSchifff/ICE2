@@ -29,10 +29,13 @@ export class TeamViewComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
+
     this.route.params.subscribe(params => {
-    this.getTeam(); // reset and set based on new parameter this time
-    this.getStandings();
+      this.id = null;
+      this.standing = null;
+      this.id = this.route.snapshot.paramMap.get('id');
+      this.getTeam(); // reset and set based on new parameter this time
+      this.getStandings();
     });
 
 

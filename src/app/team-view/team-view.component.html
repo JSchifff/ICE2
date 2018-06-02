@@ -16,7 +16,7 @@
           </div>
           <div>
             <app-mini-nav></app-mini-nav>
-            <router-outlet></router-outlet>
+            <router-outlet *ngIf="standing"></router-outlet>
           </div>
     </div>
     <div class="col-sm-1"></div>
