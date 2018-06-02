@@ -27,7 +27,6 @@ games: Fixture[];
   ngOnInit() {
     this.route.parent.params.subscribe(a=>this.id = a.id);
     this.dataService.getTeam(this.id).subscribe(temp => this.tTeam = temp);
-    console.log("DFS");
     this.games = new Array();
     this.getRecentGames();
   }

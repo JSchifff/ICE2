@@ -1,12 +1,9 @@
-<div id="leagueInfo">
+<div id="leagueInfo" *ngIf="competition">
   <h5>English Premier League</h5>
-  <div>
-    Random league info...
-  </div>
-  <div>
-    Start Date: 12/8/2017
-  </div>
-  <div>
-    End Date: 31/12/2018
-  </div>
+id: {{competition.id}}<br>
+caption: {{competition.caption}}<br>
+league: {{competition.league}}<br>
+year: {{competition.year}}<br>
+no of teams: {{competition.numberOfTeams}}<br>
+number of games: {{competition.numberOfGames}}<br>
 </div>

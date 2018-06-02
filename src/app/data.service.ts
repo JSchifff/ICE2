@@ -8,6 +8,7 @@ import { Team } from './classes/team';
 import { Standing } from './classes/standing';
 import { Fixture } from './classes/fixture';
 import { Player } from './classes/player';
+import { Competition } from './classes/competition';
 
 @Injectable()
 export class DataService {
@@ -118,5 +119,15 @@ export class DataService {
         .set('X-Response-Control', 'minified')
       }
     ).map(obj => obj['players']);
-  }
+    }
+
+  getCompetition(): Observable<any>{
+  return this.http.get(
+    'https://api.football-data.org/v1/competitions',
+    {
+      headers: new HttpHeaders()
+        .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
+        .set('X-Response-Control', 'minified')
+      }
+    )};
 }

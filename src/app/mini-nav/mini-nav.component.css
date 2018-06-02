@@ -1,27 +1,29 @@
 .nav-item
 {
   border: 1px solid grey;
-  border-radius: 2px;
-  padding: 5px;
+  border-radius: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   color: white;
+  background-color: purple;
 }
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-.dropdown-item:hover {
-  background-color: rgb(45, 121, 51, 0.3);
-
-}
-
-#navbar {
+.navbar {
   margin-bottom: 25px;
+  background-color: purple;
 }
 
 .navbar-nav li .nav-link
 {
   color: white;
 }
+.nav-item:hover {
+  background-color:grey;
+}
+
 
 
 @keyframes spin {

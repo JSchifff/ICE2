@@ -2,15 +2,17 @@
 	background: linear-gradient(to bottom right, red, blue);
 	float: left;
 	width: 20%;
+	opacity: 30%;
 	font-weight: bold;
 	text-align: center;
 	font-size: 40px;
 	padding-top: 31px;
 	padding-bottom: 30px;
-	border: solid black 2px
+	border: solid black 2px;
+	min-height: 125px;
 }
 .playerDetails{
-
+border: white 2px;
 }
 .pData1{
 	text-align: center;
