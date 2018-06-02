@@ -1,3 +1,13 @@
-<p>
-  fav-team-data works!
-</p>
+<div id="FavTeamData" *ngIf="id">
+  <div class="draw" *ngIf="goalDiff == 0">
+    DRAW
+  </div>
+
+  <div class="favWin" *ngIf="(goalDiff > 0 && isHome) || (goalDiff < 0 && !isHome)">
+    WIN
+  </div>
+
+  <div class="favLose" *ngIf="(goalDiff < 0 && isHome) || (goalDiff > 0 && !isHome)">
+    LOSE
+  </div>
+</div>

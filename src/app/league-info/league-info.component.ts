@@ -16,7 +16,7 @@ export class LeagueInfoComponent implements OnInit {
   ngOnInit() {
   console.log("DFS");
   this.getCompetition();
-  console.log(this.competition.id);
+  //console.log(this.competition.id);
   }
 
 getCompetition(): void{
