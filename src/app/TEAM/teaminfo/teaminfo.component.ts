@@ -19,16 +19,35 @@ export class TeaminfoComponent implements OnInit {
 
   id: any;
   tTeam: Team;
+  games: Fixture[];
+  teamWins: number;
+  teamLosses: number;
+  teamDraws: number;
+  averageGoalsFor: number;
+  averageGoalsAgainst: number;
+  winPercent: number;
+  totalGoalsFor: number;
+  totalGoalsAgainst: number;
 
  constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
-games: Fixture[];
 
   ngOnInit() {
+
+    this.teamWins = 0;
+    this.teamLosses =0;
+    this.teamDraws=0;
+    this.averageGoalsFor=0;
+    this.averageGoalsAgainst=0;
+    this.winPercent=0;
+    this.totalGoalsFor=0;
+    this.totalGoalsAgainst=0;
+
     this.route.parent.params.subscribe(a=>this.id = a.id);
     this.dataService.getTeam(this.id).subscribe(temp => this.tTeam = temp);
     this.games = new Array();
     this.getRecentGames();
+    this.getTeamValues();
   }
 
   getRecentGames(): void
@@ -42,5 +61,46 @@ games: Fixture[];
         }));
   }
 
+  getTeamValues(): void
+  {
+    this.dataService.getSeasonGames().subscribe(temp => temp.forEach(a=>
+    {
+      let b = <Fixture>a;
+      if(b.homeTeamName==this.tTeam.name)
+      {
+        if(b.result.goalsHomeTeam-b.result.goalsAwayTeam<0)
+        {
+          this.teamLosses++;
+        }
+        else if(b.result.goalsHomeTeam-b.result.goalsAwayTeam==0)
+        {
+        this.teamDraws++;
+        }
+        else 
+        {
+          this.teamWins++;
+        }
+        this.totalGoalsFor+=b.result.goalsHomeTeam;
+        this.totalGoalsAgainst +=b.result.goalsAwayTeam;
+      }
+      if(b.awayTeamName==this.tTeam.name)
+      {
+      if(b.result.goalsHomeTeam-b.result.goalsAwayTeam<0)
+        {
+          this.teamWins++;
+        }
+        else if(b.result.goalsHomeTeam-b.result.goalsAwayTeam==0)
+        {
+        this.teamDraws++;
+        }
+        else 
+        {
+          this.teamLosses++;
+        }
+        this.totalGoalsFor+=b.result.goalsAwayTeam;
+        this.totalGoalsAgainst +=b.result.goalsHomeTeam;
+      }
+    }))
+  }
 
 }

@@ -1,12 +1,11 @@
-<p  *ngIf="tTeam">
-    public id: {{tTeam.id}},<br>
-    public name: {{tTeam.name}},<br>
-    public shortName: {{tTeam.shortname}},<br>
-    public squadMarketValue: {{tTeam.squadMarketValue}},<br>
-    public playedGames: {{tTeam.playedGames}},<br>
-    public crestURI: {{tTeam.crestUrl}},<br>
-    public points: {{tTeam.points}},<br>
-    public goals: {{tTeam.goal}},<br>
-    public goalsAgainst: {{tTeam.goalsAgainst}},<br>
-    public goalDifference: {{tTeam.goalDifference}}<br>
-   </p>
+<p>
+WINS: {{teamWins}}
+Losses: {{teamLosses}}
+Draws: {{teamDraws}}
+avaerage goals {{averageGoalsFor}}
+average goals against {{averageGoalsAgainst}}
+win percentage {{winPercentage}}
+total goals for {{totalGoalsFor}}
+total goals against {{totalGoalsAgainst}}
+win percent {{winPercent}}
+</p>
