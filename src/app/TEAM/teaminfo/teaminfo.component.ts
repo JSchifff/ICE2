@@ -28,6 +28,7 @@ export class TeaminfoComponent implements OnInit {
   winPercent: number;
   totalGoalsFor: number;
   totalGoalsAgainst: number;
+  totalGamesPlayed: number;
 
  constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
@@ -37,17 +38,23 @@ export class TeaminfoComponent implements OnInit {
     this.teamWins = 0;
     this.teamLosses =0;
     this.teamDraws=0;
-    this.averageGoalsFor=0;
-    this.averageGoalsAgainst=0;
     this.winPercent=0;
     this.totalGoalsFor=0;
     this.totalGoalsAgainst=0;
+    this.totalGamesPlayed=0;
+    this.averageGoalsFor=0;
+    this.averageGoalsAgainst=0;
+
 
     this.route.parent.params.subscribe(a=>this.id = a.id);
     this.dataService.getTeam(this.id).subscribe(temp => this.tTeam = temp);
     this.games = new Array();
     this.getRecentGames();
     this.getTeamValues();
+
+    this.averageGoalsFor=this.totalGoalsFor/this.totalGamesPlayed;
+    this.averageGoalsAgainst=this.totalGoalsAgainst/this.totalGamesPlayed;
+    console.log(this.averageGoalsFor);
   }
 
   getRecentGames(): void
@@ -82,6 +89,7 @@ export class TeaminfoComponent implements OnInit {
         }
         this.totalGoalsFor+=b.result.goalsHomeTeam;
         this.totalGoalsAgainst +=b.result.goalsAwayTeam;
+        this.totalGamesPlayed++;
       }
       if(b.awayTeamName==this.tTeam.name)
       {
@@ -99,6 +107,7 @@ export class TeaminfoComponent implements OnInit {
         }
         this.totalGoalsFor+=b.result.goalsAwayTeam;
         this.totalGoalsAgainst +=b.result.goalsHomeTeam;
+        this.totalGamesPlayed++;
       }
     }))
   }
