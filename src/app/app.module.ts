@@ -23,6 +23,7 @@ import { PlayerinfoComponent } from './TEAM/playerinfo/playerinfo.component';
 import { PastGamesComponent } from './TEAM/past-games/past-games.component';
 import { FutureGamesComponent } from './TEAM/future-games/future-games.component';
 import { MiniNavComponent } from './mini-nav/mini-nav.component';
+import { FavTeamDataComponent } from './fav-team-data/fav-team-data.component';
 
 
 
@@ -43,7 +44,8 @@ import { MiniNavComponent } from './mini-nav/mini-nav.component';
     PlayerinfoComponent,
     PastGamesComponent,
     FutureGamesComponent,
-    MiniNavComponent
+    MiniNavComponent,
+    FavTeamDataComponent
   ],
   imports: [
     BrowserModule,

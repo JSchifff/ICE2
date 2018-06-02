@@ -40,3 +40,29 @@
   height: 200px;
   width: 20%;
 }
+
+
+/* #fullHeart
+{
+  display: none;
+}
+
+#fullHeart:hover
+{
+  display: inline;
+}
+
+#fullHeart:hover + #emptyHeart
+{
+  display: none;
+}
+
+#emptyHeart:hover
+{
+  display: none;
+}
+
+#emptyHeart:hover + #fullHeart
+{
+  display: inline;
+} */

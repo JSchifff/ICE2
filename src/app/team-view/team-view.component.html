@@ -1,3 +1,4 @@
+
 <div class="container-fluid" >
   <div class="row">
 
@@ -11,12 +12,16 @@
               <h2>{{standing.rank}}</h2>
             </div>
             <div id="teamName">
-              <h2 *ngIf="selectedTeam">{{selectedTeam.name}}</h2>
+              <h2 *ngIf="selectedTeam" (click)="setFav()">
+                {{selectedTeam.name}}
+                <span *ngIf="!fav"><i class="far fa-heart" id="emptyHeart" ></i></span>
+                <span *ngIf="fav"><i class="fas fa-heart" id="fullHeart" ></i></span>
+              </h2>
             </div>
           </div>
           <div>
             <app-mini-nav></app-mini-nav>
-            <router-outlet *ngIf="standing"></router-outlet>
+            <router-outlet *ngIf="selectedTeam"></router-outlet>
           </div>
     </div>
     <div class="col-sm-1"></div>

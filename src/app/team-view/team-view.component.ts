@@ -22,6 +22,7 @@ export class TeamViewComponent implements OnInit {
   standing: Standing;
   selectedTeam: Team;
   id: string;
+  fav: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,8 +33,9 @@ export class TeamViewComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.id = null;
-      this.standing = null;
+      this.selectedTeam = null;
       this.id = this.route.snapshot.paramMap.get('id');
+      this.updateFav();
       this.getTeam(); // reset and set based on new parameter this time
       this.getStandings();
     });
@@ -59,5 +61,27 @@ export class TeamViewComponent implements OnInit {
         this.standing = b;
       }
     }));
+  }
+
+  setFav(): void
+  {
+    document.cookie = "id=" + this.id;
+    this.updateFav();
+  }
+
+  updateFav(): void
+  {
+    var cookieID = document.cookie.split("=")[1];
+
+    console.log(cookieID);
+    if(cookieID == this.id)
+    {
+      this.fav = true;
+    }
+    else
+    {
+      console.log(cookieID + "    |   " + this.id)
+      this.fav = false;
+    }
   }
 }
