@@ -1,17 +1,10 @@
-.nav-link {
-  border-top: 1px solid gray;
-  border-right: 1px solid gray;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  margin: -2px;
+.nav-item
+{
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 5px;
+  color: white;
 }
-
-#leftmost {
-  border-left: 1px solid gray;
-  border-top-left-radius: 5px;
-
-}
-
 .dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -23,14 +16,12 @@
 
 #navbar {
   margin-bottom: 25px;
-  color: white;
 }
 
 .navbar-nav li .nav-link
 {
   color: white;
 }
-
 
 
 @keyframes spin {

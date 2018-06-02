@@ -1,0 +1,68 @@
+#recentMain
+{
+  background-color: white;
+  text-align: center;
+}
+
+.container
+{
+  text-align: center;
+}
+.teamData
+{
+  width: 50%;
+  height: 4em;
+}
+
+.game
+{
+  margin-bottom: 15px;
+  border: 1px solid green;
+  overflow: hidden;
+
+}
+
+.game h3
+{
+  display: inline-block;
+
+  padding-top: 10px;
+}
+
+/* .homeTeam
+{
+  float: left;
+}
+
+
+.awayTeam
+{
+  width: 50%;
+  float: right;
+} */
+
+.score
+{
+  padding-top: 2px;
+  font-size: 2em;
+}
+
+.homeScore
+{
+  float: right;
+  padding-right: 10px;
+}
+
+.awayScore
+{
+  float: left;
+  padding-left: 10px;
+}
+
+.gameDate p
+{
+  padding-top: 13px;
+
+  font-weight: bold;
+  font-size: 1.2em;
+}

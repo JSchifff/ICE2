@@ -1,12 +1,40 @@
 #teamMain
 {
-  background-color: pink;
+  background-color: white;
   padding: 15px;
 }
 
-
+#teamRank
+{	padding-top: 75px;
+  	padding-bottom: 75px;
+	font-size: 30px;
+	text-align: center;
+	float:left;
+	background-color: lightblue;
+	width: 20%;
+	border-radius: 25px;
+	border: solid green 2px;
+}
+#teamName
+{	
+	border-radius: 25px;
+	border: solid green 2px;
+	padding-top: 75px;
+  	padding-bottom: 75px;
+	font-size: 30px;
+	width: 60%;
+	float: left;
+	text-align: center;
+	background-color: pink;
+	font-style: "Times";
+}
+#teamInfo
+{
+	height: 200px;
+}
 #mainCrest
 {
   float: left;
-  width: 30%;
+  height: 200px;
+  width: 20%;
 }

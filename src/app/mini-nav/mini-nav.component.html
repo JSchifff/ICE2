@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-dark navbar-light" id="navbar">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
+    <div class="navbar-toggler-icon"></div>
   </button>
   <!-- <a class="navbar-brand" routerLink="">
     <img src="../../assets/logo.png" id="navLogo"/>
@@ -8,26 +8,17 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a routerLink="./PastGames">PastGames</a> 
+      <a class="nav-link" routerLink="./PastGames">Past Games</a> 
     </li>
     <li class="nav-item">
-    <a routerLink="./TeamInfo">TeamInfo</a>
-    </li>
-    <!--<li class="nav-item">
-      <a class="nav-link" routerLink="/RecentGames">Recent Games</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Teams</a>
-
-      <div class="dropdown-menu" >
-        <a class="dropdown-item" routerLink="/ViewTeam/{{team.id}}" *ngFor="let team of myTeam"> {{team.name}} </a>
-        /*<!--<a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a*/
-      </div>
+    <a class="nav-link" routerLink="./TeamInfo">Team Info</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/Head2Head">Head 2 Head</a>
-    </li>-->
+    <a class="nav-link" routerLink="./FutureGames">Future Games</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" routerLink="./PlayerInfo">Player Info</a>
+    </li>
   </ul>
 </div>
 </nav>

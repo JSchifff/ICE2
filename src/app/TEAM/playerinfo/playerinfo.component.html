@@ -1,3 +1,12 @@
-<p>
-  playerinfo works!
-</p>
+<div *ngFor="let player of players" class="rank">
+	<div class="playerDetails">
+        <div class="number"> {{player.jerseyNumber}}</div>
+        <div class="pData2">
+   	        <div class ="pData1"> Name: <br>{{player.name}}</div>
+            <div class="pData1"> Position: <br>{{player.position}} </div>
+            <div class="pData1"> Nationality: <br>{{player.nationality}} </div>
+            <div class="pData1"> Date Of Birth: <br>{{player.dateOfBirth}} </div>
+         </div>
+    </div>
+</div>
+

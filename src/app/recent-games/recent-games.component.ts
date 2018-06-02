@@ -21,7 +21,7 @@ export class RecentGamesComponent implements OnInit {
 
   getRecentGames(): void
   {
-    this.dataService.getSeasonGames()
+    this.dataService.getAllGames()
       .subscribe(temp => temp.forEach(a =>
         {
           let b = <Fixture>a;
@@ -30,6 +30,5 @@ export class RecentGamesComponent implements OnInit {
         }));//this.games = temp
       //.forEach(obj => console.log(obj));
   }
-
 
 }

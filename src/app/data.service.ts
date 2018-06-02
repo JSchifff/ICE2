@@ -7,6 +7,7 @@ import "rxjs/add/operator/map";
 import { Team } from './classes/team';
 import { Standing } from './classes/standing';
 import { Fixture } from './classes/fixture';
+import { Player } from './classes/player';
 
 @Injectable()
 export class DataService {
@@ -57,6 +58,33 @@ export class DataService {
       }
     )
     .map(obj => obj['fixtures']);
+  }
+
+  getAllGames(): Observable<any[]> {
+    return this.http.get
+    (
+      'https://api.football-data.org/v1/competitions/' + this.compID + '/fixtures?timeFrame=p999',
+      {
+        headers: new HttpHeaders()
+        .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
+        .set('X-Response-Control', 'minified')
+      }
+    )
+    .map(obj => obj['fixtures']);
+
+  }
+
+  getFutureGames(): Observable<any[]> {
+    return this.http.get
+    (
+      'https://api.football-data.org/v1/competitions/' + this.compID + '/fixtures?timeFrame=n365',
+      {
+        headers: new HttpHeaders()
+        .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
+        .set('X-Response-Control', 'minified')
+      }
+    )
+    .map(obj => obj['fixtures']);
     //.forEach(obj => console.log(obj));
   }
 
@@ -66,7 +94,6 @@ export class DataService {
       {
         headers: new HttpHeaders()
         .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
-        .set('X-Response-Control', 'minified')
       }
     );
   }
@@ -82,4 +109,14 @@ export class DataService {
     );
   }
 
+  getPlayers(id: string): Observable<any> {
+    return this.http.get(
+      'https://api.football-data.org/v1/teams/' + id + '/players',
+      {
+        headers: new HttpHeaders()
+        .set('X-Auth-Token', 'baf9a6c1b5344906b70b585cfca9b22d')
+        .set('X-Response-Control', 'minified')
+      }
+    ).map(obj => obj['players']);
+  }
 }

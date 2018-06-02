@@ -1,3 +1,12 @@
-<p>
-  teaminfo works!
-</p>
+<p  *ngIf="tTeam">
+    public id: {{tTeam.id}},<br>
+    public name: {{tTeam.name}},<br>
+    public shortName: {{tTeam.shortname}},<br>
+    public squadMarketValue: {{tTeam.squadMarketValue}},<br>
+    public playedGames: {{tTeam.playedGames}},<br>
+    public crestURI: {{tTeam.crestUrl}},<br>
+    public points: {{tTeam.points}},<br>
+    public goals: {{tTeam.goal}},<br>
+    public goalsAgainst: {{tTeam.goalsAgainst}},<br>
+    public goalDifference: {{tTeam.goalDifference}}<br>
+   </p>

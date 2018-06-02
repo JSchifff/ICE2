@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-
 import { MainLadderComponent } from './main-ladder/main-ladder.component';
 import { RecentGamesComponent } from './recent-games/recent-games.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -9,7 +8,8 @@ import { TeamViewComponent } from './team-view/team-view.component';
 import { HeadToHeadComponent } from './head-to-head/head-to-head.component';
 import { PastGamesComponent } from './TEAM/past-games/past-games.component';
 import { TeaminfoComponent } from './TEAM/teaminfo/teaminfo.component';
-
+import { FutureGamesComponent } from './TEAM/future-games/future-games.component';
+import { PlayerinfoComponent } from './TEAM/playerinfo/playerinfo.component';
 
 
 const routes: Routes = [
@@ -35,6 +35,18 @@ const routes: Routes = [
       {
         path: 'TeamInfo',
         component: TeaminfoComponent
+      },
+      {
+        path: 'FutureGames',
+        component: FutureGamesComponent
+      },
+      {
+        path: 'PlayerInfo',
+        component: PlayerinfoComponent
+      },
+      {
+        path: '',
+        component: PastGamesComponent
       }
 
     ]

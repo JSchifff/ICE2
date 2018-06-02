@@ -1,5 +1,97 @@
+
 #head2headMain
 {
   text-align: center;
   background-color: white;
+}
+
+#head2headTeamSelect select
+{
+  display: inline-block;
+  width: 30%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+}
+
+#team1
+{
+  padding-right: 10%;
+}
+#team2
+{
+  padding-left: 10%;
+}
+
+hr {
+  margin-top: -0.5%;
+}
+
+
+
+.teamData
+{
+  border: 1px solid green;
+  width: 30%;
+  margin-bottom: 25px;
+}
+
+.rank
+{
+  height: 40%;
+  border-bottom: 1px solid green;
+}
+
+.rank h1 {
+    font-size: 5em;
+  }
+
+#team1Data
+{
+  float: left;
+  margin-left: 8.5%;
+}
+
+#team2Data
+{
+  float: right;
+  margin-right: 8.5%;
+}
+
+#head2headGames
+{
+  clear: both;
+}
+
+.game
+{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.game h3
+{
+  display: inline-block;
+  padding-top: 10px;
+}
+.score
+{
+  padding-top: 2px;
+  font-size: 2em;
+}
+
+.homeScore
+{
+  float: right;
+  padding-right: 10px;
+}
+
+.awayScore
+{
+  float: left;
+  padding-left: 10px;
+}
+
+.gameDate
+{
+  font-size: 1.3em;
 }

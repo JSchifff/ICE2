@@ -2,26 +2,149 @@
   <div class="row">
     <div class="col-sm-1"></div>
 
+    <!--
+    ████████ ███████  █████  ███    ███     ███████ ███████ ██      ███████  ██████ ████████ ██  ██████  ███    ██
+       ██    ██      ██   ██ ████  ████     ██      ██      ██      ██      ██         ██    ██ ██    ██ ████   ██
+       ██    █████   ███████ ██ ████ ██     ███████ █████   ██      █████   ██         ██    ██ ██    ██ ██ ██  ██
+       ██    ██      ██   ██ ██  ██  ██          ██ ██      ██      ██      ██         ██    ██ ██    ██ ██  ██ ██
+       ██    ███████ ██   ██ ██      ██     ███████ ███████ ███████ ███████  ██████    ██    ██  ██████  ██   ████
+    -->
+
     <div class="col-sm-10" id="head2headMain">
-      <h1>Head 2 Head</h1>
+      <div id="head2headTeamSelect">
 
-      Team 1:
-      <select [(ngModel)]="selectedTeam1" (change)="onTeamUpdate()">
-        <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
-      </select>
+        <h1>Head 2 Head</h1>
+        Select two teams to compare<br />
 
-      <br />
-      Team 2:
-      <select [(ngModel)]="selectedTeam2" (change)="onTeamUpdate()">
-        <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
-      </select>
+        <span id="team1">
 
-      <div *ngIf="data">
-        <hr />
-        {{data.head2head.homeTeamWins}} : {{data.head2head.awayTeamWins}}
+          <select [(ngModel)]="selectedTeam1" (change)="onTeamUpdate()" class="form-control">
+            <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+          </select>
+
+          <!-- Team 1 -->
+        </span>
+
+        VS
+
+        <span id="team2">
+          <!-- Team 2 -->
+          <select [(ngModel)]="selectedTeam2" (change)="onTeamUpdate()" class="form-control">
+            <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+          </select>
+        </span>
+      </div>
+
+
+    <!--
+    ███████ ████████  █████  ██████  ████████      █████   ██████ ████████ ██    ██  █████  ██          ██████   █████  ████████  █████
+    ██         ██    ██   ██ ██   ██    ██        ██   ██ ██         ██    ██    ██ ██   ██ ██          ██   ██ ██   ██    ██    ██   ██
+    ███████    ██    ███████ ██████     ██        ███████ ██         ██    ██    ██ ███████ ██          ██   ██ ███████    ██    ███████
+         ██    ██    ██   ██ ██   ██    ██        ██   ██ ██         ██    ██    ██ ██   ██ ██          ██   ██ ██   ██    ██    ██   ██
+    ███████    ██    ██   ██ ██   ██    ██        ██   ██  ██████    ██     ██████  ██   ██ ███████     ██████  ██   ██    ██    ██   ██
+    -->
+
+    <div *ngIf="data">
+      <hr />
+
+      <!-- team 1 -->
+
+      <div class="teamData" id="team1Data">
+        <div class="rank" *ngIf="team1Standing">
+          <h4>TEAM RANK:</h4>
+          <h1>{{team1Standing.rank}}</h1>
+        </div>
+
+        <div class="winPercent">
+          <h4>WINS:</h4>
+          <h1>{{data.head2head.homeTeamWins / data.head2head.count  * 100| number: '1.0-0'}}%</h1>
+        </div>
+      </div>
+
+      <!-- TEAM 2 -->
+      <div class="teamData" id="team2Data">
+        <div class="rank" *ngIf="team2Standing">
+          <h4>TEAM RANK:</h4>
+          <h1>{{team2Standing.rank}}</h1>
+        </div>
+
+        <div class="winPercent">
+          <h4>WINS:</h4>
+          <h1>{{data.head2head.awayTeamWins / data.head2head.count * 100| number: '1.0-0'}}%</h1>
+        </div>
+      </div>
+
+
+
+      <div id="head2headGames">
+        <div *ngFor="let game of games" class="row game">
+
+
+
+
+
+          <!--IF TEAM 1 IS HOME TEAM -->
+          <div class="homeTeam teamData col-sm-5" *ngIf="game.homeTeamId == selectedTeam1.id" [ngStyle]="{'background':game.goalDiff > 0 ?
+                                                      'linear-gradient(to right, rgba(34, 239, 0, 0.36), rgba(0,0,0, 0))' : (game.goalDiff < 0 ?
+                                                      'linear-gradient(to right, rgba(255, 81, 81, 0.56), rgba(0,0,0, 0))' :
+                                                      'linear-gradient(to right, rgba(255, 255, 73, 0.59), rgba(0,0,0, 0))'
+                                                      )}">
+
+            <h3>{{game.homeTeamName}}</h3>
+            <span class="score homeScore">{{game.result.goalsHomeTeam}}</span>
+          </div>
+
+          <div class="col-sm-2 gameDate" *ngIf="game.homeTeamId == selectedTeam1.id">
+            <p>{{game.date | date }}</p>
+          </div>
+
+          <div class="awayTeam teamData col-sm-5" *ngIf="game.homeTeamId == selectedTeam1.id" [ngStyle]="{'background':game.goalDiff < 0 ?
+                                                      'linear-gradient(to left, rgba(34, 239, 0, 0.36), rgba(0,0,0, 0))' : (game.goalDiff > 0 ?
+                                                      'linear-gradient(to left, rgba(255, 81, 81, 0.56), rgba(0,0,0, 0))' :
+                                                      'linear-gradient(to left, rgba(255, 255, 73, 0.59), rgba(0,0,0, 0))'
+                                                      )}">
+
+            <span class="score awayScore">{{game.result.goalsAwayTeam}}</span>
+             <h3>{{game.awayTeamName}}</h3>
+          </div>
+
+
+
+          <!--IF TEAM 2 IS HOME TEAM -->
+          <div class="homeTeam teamData col-sm-5" *ngIf="game.homeTeamId == selectedTeam2.id" [ngStyle]="{'background':game.goalDiff < 0 ?
+                                                      'linear-gradient(to right, rgba(34, 239, 0, 0.36), rgba(0,0,0, 0))' : (game.goalDiff > 0 ?
+                                                      'linear-gradient(to right, rgba(255, 81, 81, 0.56), rgba(0,0,0, 0))' :
+                                                      'linear-gradient(to right, rgba(255, 255, 73, 0.59), rgba(0,0,0, 0))'
+                                                      )}">
+
+            <h3>{{game.awayTeamName}}</h3>
+            <span class="score homeScore">{{game.result.goalsAwayTeam}}</span>
+          </div>
+
+          <div class="col-sm-2 gameDate" *ngIf="game.homeTeamId == selectedTeam2.id">
+            <p>{{game.date | date }}</p>
+          </div>
+
+          <div class="awayTeam teamData col-sm-5" *ngIf="game.homeTeamId == selectedTeam2.id" [ngStyle]="{'background':game.goalDiff > 0 ?
+                                                      'linear-gradient(to left, rgba(34, 239, 0, 0.36), rgba(0,0,0, 0))' : (game.goalDiff < 0 ?
+                                                      'linear-gradient(to left, rgba(255, 81, 81, 0.56), rgba(0,0,0, 0))' :
+                                                      'linear-gradient(to left, rgba(255, 255, 73, 0.59), rgba(0,0,0, 0))'
+                                                      )}">
+
+            <span class="score awayScore">{{game.result.goalsHomeTeam}}</span>
+             <h3>{{game.homeTeamName}}</h3>
+          </div>
+
+
+
+
+
+      </div>
       </div>
 
     </div>
+
+    </div><!--end main div -->
 
     <div class="col-sm-1"></div>
   </div>

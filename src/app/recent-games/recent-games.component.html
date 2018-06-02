@@ -5,9 +5,9 @@
     <div id="recentMain" class="col-sm-8">
       <h1>Recent Games</h1>
       <div class=container>
-
-        <div *ngFor="let game of games" class="row game">
+        <div *ngFor="let game of games" (change)="updateTeam()" class="row game">
           <div class="col-sm-2 gameDate">
+
             <p>{{game.date | date }}</p>
           </div>
 
@@ -20,6 +20,7 @@
 
             <h3>{{game.homeTeamName}}</h3>
             <span class="score homeScore">{{game.result.goalsHomeTeam}}</span>
+
           </div>
 
           <div class="awayTeam teamData col-sm-5" [ngStyle]="{'background':game.goalDiff < 0 ?

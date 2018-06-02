@@ -1,0 +1,27 @@
+.number{
+	background: linear-gradient(to bottom right, red, blue);
+	float: left;
+	width: 20%;
+	font-weight: bold;
+	text-align: center;
+	font-size: 40px;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	border: solid black 2px
+}
+.playerDetails{
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+.pData1{
+	text-align: center;
+	background: linear-gradient(to bottom left, green, gold);
+	float: left;
+	width: 50%;
+	font-size: 20px;
+	border: solid black 2px
+}
+.pData2{
+	float: left;
+	width: 80%;
+}

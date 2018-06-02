@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="selectedTeam">
   <div class="row">
 
   <div class="col-sm-1"></div>
@@ -6,13 +6,17 @@
 
     <div id="teamMain" class="col-sm-8">
           <img src="{{selectedTeam.crestUrl}}" id="mainCrest"/>
-          <h2>{{selectedTeam.name}}</h2>
+          <div id ="teamInfo">
+            <div id="teamRank">
+              <h2>{{standing.rank}}</h2>
+            </div>
+            <div id="teamName">
+              <h2>{{selectedTeam.name}}</h2>
+            </div>
+          </div>
           <div>
             <app-mini-nav></app-mini-nav>
-            <div>
             <router-outlet></router-outlet>
-           
-            </div>
           </div>
     </div>
     <div class="col-sm-1"></div>

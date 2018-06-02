@@ -22,7 +22,6 @@ import { TeaminfoComponent } from './TEAM/teaminfo/teaminfo.component';
 import { PlayerinfoComponent } from './TEAM/playerinfo/playerinfo.component';
 import { PastGamesComponent } from './TEAM/past-games/past-games.component';
 import { FutureGamesComponent } from './TEAM/future-games/future-games.component';
-import { TeamAppRoutingModule } from './team-app-routing.module';
 import { MiniNavComponent } from './mini-nav/mini-nav.component';
 
 
@@ -50,8 +49,7 @@ import { MiniNavComponent } from './mini-nav/mini-nav.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    TeamAppRoutingModule
+    FormsModule
   ],
   providers: [
     DataService
