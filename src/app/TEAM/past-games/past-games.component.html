@@ -1,7 +1,7 @@
-<p>
+<p *ngIf="paTeam">
   {{paTeam.shortName}}
 </p>
-  <div class=container style= "float:left;">
+  <div class=container style= "float:left;" *ngIf="games">
 
         <div *ngFor="let game of games" class="row game">
           <div class="col-sm-2 gameDate">
