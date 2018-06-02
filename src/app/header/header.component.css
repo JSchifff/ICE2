@@ -1,8 +1,11 @@
 #navLogo {
   max-height: 50px;
-  animation: spin 4s infinite alternate ease-in-out, roll 4s infinite alternate ease-in-out;
+  animation: spin 4s infinite alternate ease-in-out;
+  position: relative;
 }
-
+#logo{
+  animation:roll 4s infinite alternate ease-in-out;
+}
 #leagueLogo
 {
   width: 150px;
@@ -37,5 +40,5 @@
     to {transform:rotate(720deg);}
 }
 @keyframes roll {
-  to {margin-left: 1000px;}
+  to{margin-left:1700%;}
 }
