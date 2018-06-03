@@ -13,6 +13,7 @@
 .nav-link {
   border: 1px solid rgb(0,102,0);
   border-radius: 5px;
+  /* height: 40px; */
 }
 .nav-link:hover{
   background-color: rgb(0,102,0);
@@ -36,7 +37,17 @@
 .navbar-nav li .nav-link
 {
   color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  padding-bottom: 5px;
 }
+
+.navbar-nav li{
+
+}
+
 
 
 

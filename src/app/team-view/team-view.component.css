@@ -9,10 +9,11 @@
   	padding-bottom: 36px;
 	text-align: center;
 	float:left;
-	background: linear-gradient(to left,lightblue, blue); 
+	/* background: linear-gradient(to left,lightblue, blue); */
 	width: 20%;
-	border-radius: 25px;
-	border: solid green 2px;
+  height: 200px;
+	/* border-radius: 25px;
+	border: solid green 2px; */
 
 }
 #teamRank h2{
@@ -20,17 +21,31 @@
 }
 #teamName
 {
-	background: linear-gradient(to right,lightblue, blue);
+	/* background: linear-gradient(to right,lightblue, blue);
 	border-radius: 25px;
-	border: solid green 2px;
-	padding-top: 75px;
+	border: solid green 2px; */
+	padding-top: 20px;
   	padding-bottom: 75px;
-	font-size: 30px;
+	font-size: 3em;
 	width: 60%;
 	float: left;
 	text-align: center;
 	font-style: "Times";
 }
+
+#teamName span
+{
+  display: inline-block;
+    font-size: 1.5em;
+    margin-top: 10px;
+    /* padding-left: 15%; */
+}
+
+#teamName h1
+{
+  font-size: 1em;
+}
+
 #teamInfo
 {
 	height: 200px;
@@ -38,7 +53,7 @@
 #mainCrest
 {
   float: left;
-  height: 200px;
+  max-height: 200px;
   width: 20%;
 }
 

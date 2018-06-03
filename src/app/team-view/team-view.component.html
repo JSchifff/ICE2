@@ -9,14 +9,15 @@
           <img src="{{standing.crestURI}}" id="mainCrest"/>
           <div id ="teamInfo">
             <div id="teamRank">
+              <h4>RANK:</h4>
               <h2>{{standing.rank}}</h2>
             </div>
             <div id="teamName">
-              <h2 *ngIf="selectedTeam" (click)="setFav()">
-                {{selectedTeam.name}}
+              <h1 *ngIf="selectedTeam" (click)="setFav()">
+                {{selectedTeam.name}}<br />
                 <span *ngIf="!fav"><i class="far fa-heart" id="emptyHeart" ></i></span>
                 <span *ngIf="fav"><i class="fas fa-heart" id="fullHeart" ></i></span>
-              </h2>
+              </h1>
             </div>
           </div>
           <div>
