@@ -65,7 +65,7 @@ export class TeamViewComponent implements OnInit {
 
   setFav(): void
   {
-    document.cookie = 'id=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = '';
     document.cookie = "id=" + this.id;
     this.updateFav();
   }
