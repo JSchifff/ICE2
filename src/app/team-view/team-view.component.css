@@ -41,6 +41,11 @@
     /* padding-left: 15%; */
 }
 
+#emptyHeart:hover
+{
+  cursor: pointer;
+}
+
 #teamName h1
 {
   font-size: 1em;

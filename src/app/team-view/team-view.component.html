@@ -1,4 +1,8 @@
-
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 <div class="container-fluid" >
   <div class="row">
 
@@ -15,7 +19,9 @@
             <div id="teamName">
               <h1 *ngIf="selectedTeam" (click)="setFav()">
                 {{selectedTeam.name}}<br />
-                <span *ngIf="!fav"><i class="far fa-heart" id="emptyHeart" ></i></span>
+                <a delay="0" data-toggle="tooltip" title="Click here to set this as you favourite team. Get quick updates on their recent games!" style="color: black;">
+                  <span *ngIf="!fav"><i class="far fa-heart" id="emptyHeart" ></i></span>
+                </a>
                 <span *ngIf="fav"><i class="fas fa-heart" id="fullHeart" ></i></span>
               </h1>
             </div>
